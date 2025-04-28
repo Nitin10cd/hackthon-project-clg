@@ -1,0 +1,79 @@
+.student-list-container {
+    background: #1e1e1e;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .student-list-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    background: -webkit-linear-gradient(45deg, #4caf50, #2c6b2f);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+  }
+  
+  .student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: transparent;
+  }
+  
+  .student-table th, .student-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: left;
+    font-size: 15px;
+  }
+  
+  .student-table th {
+    background-color: #292929;
+    color: #4caf50;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .student-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease;
+  }
+  
+  .view-btn, .delete-btn {
+    padding: 6px 14px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .view-btn {
+    background: linear-gradient(45deg, #4caf50, #2c6b2f);
+    color: white;
+  }
+  
+  .view-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #2c6b2f, #4caf50);
+  }
+  
+  .delete-btn {
+    background: linear-gradient(45deg, #ff5f6d, #ffc371);
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #ffc371, #ff5f6d);
+  }
+  

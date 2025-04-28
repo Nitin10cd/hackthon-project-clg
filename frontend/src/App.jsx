@@ -17,6 +17,9 @@ import EventDetailed from './components/events/EventDetailed';
 import NoticeCreation from './components/notices/NoticeCreation';
 import Notices from './components/notices/Notices'
 import EventsPage from './components/events/EventPage';
+import Dashboard from './components/admin/Dashboard';
+import StudentList from './components/admin/StudentList';
+import TeacherComponent from './components/admin/TeacherComponent';
 
 
 const App = () => {
@@ -37,6 +40,9 @@ const App = () => {
             <Route path='/events/:eventid' element={<EventDetailed/>}/>
             <Route path="/createnotice" element={<NoticeCreation/>}/>
             <Route path='/notices' element={<Notices/>}/>
+            <Route path='/dashboard' element = {<Dashboard/>}/>
+            <Route path='/student-list' element = {<StudentList/>} />
+            <Route path='/teacher-list' element ={<TeacherComponent/>} />
           </Routes>
       </Router>
   );

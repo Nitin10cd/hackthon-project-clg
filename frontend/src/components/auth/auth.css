@@ -127,3 +127,126 @@
     outline: 3px solid #66bb6a;
     outline-offset: 3px;
 }
+
+/* Page Layout */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #101010; /* Dark black background */
+    padding: 2rem;
+}
+
+/* Container for the login form */
+.login-form-container {
+    background: #1e1e1e; /* Dark grey glassy background */
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Heading Style */
+.login-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: -webkit-linear-gradient(45deg, #4caf50, #2c6b2f);
+    -webkit-background-clip: text;
+    text-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Login Form */
+.login-form {
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Form Fields */
+.login-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+/* Labels */
+.login-form-group label {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #c7c7c7;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Input Fields and Select */
+.login-form-input,
+.login-form-select {
+    padding: 1rem 1.5rem;
+    background: #2a2a2a;
+    border: 1px solid #4caf50;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder and option styling */
+.login-form-input::placeholder,
+.login-form-select option {
+    color: #9e9e9e;
+}
+
+/* Focus and hover effects */
+.login-form-input:focus,
+.login-form-select:focus {
+    border-color: #66bb6a;
+    box-shadow: 0 0 10px rgba(102, 187, 106, 0.3);
+}
+
+.login-form-input:hover,
+.login-form-select:hover {
+    background: #333333;
+}
+
+/* Submit Button */
+.login-form-button-wrapper {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.login-submit-button {
+    padding: 1rem 2.8rem;
+    font-size: 1.2rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover and active states */
+.login-submit-button:hover {
+    background-color: #388e3c;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.login-submit-button:active {
+    transform: translateY(0);
+}
+
+.login-submit-button:focus {
+    outline: 3px solid #66bb6a;
+    outline-offset: 3px;
+}

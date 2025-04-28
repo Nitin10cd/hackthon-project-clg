@@ -1,9 +1,4 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom right, #e0f7ff, #f1f8ff);
-  }
-  
+
   .event-page {
     min-height: 100vh;
     display: flex;

@@ -5,6 +5,7 @@ import axios from "axios";
 import AdminNav from "./AdminNav";
 import { useParams } from "react-router-dom";
 import AdminSide from "./AdminSide";
+import Dashboard from "./Dashboard";
 
 
 const AdminDashBoard = () => {
@@ -36,6 +37,9 @@ const AdminDashBoard = () => {
       <AdminSide />
       {
         tabClick==="Students" && <StudentList />
+      }  
+      {
+        tabClick === "Dashboard" && <Dashboard/> 
       }
     </div>
   )

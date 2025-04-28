@@ -280,3 +280,13 @@ export const getTeacherClassses = async (req,res) => {
     return res.status(500).json({ success: false, message: "Server error while fetching joined classes." });
   }
 }
+
+// function for questions
+export const questionsGeneration = async (req,res) => {
+  
+};
+
+export const showReport = async (req,res) => {
+  
+};
+

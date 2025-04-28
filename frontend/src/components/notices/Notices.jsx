@@ -4,10 +4,6 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 
 
-
-
-
-
 const Notices = () => {
 
   const [Notices, setNotices] = useState([]);

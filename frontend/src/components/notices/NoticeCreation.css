@@ -6,8 +6,7 @@
     max-width: 1000px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    background-color: #f9f9f9;
-    flex-wrap: wrap; /* Allow wrapping if needed */
+    flex-wrap: wrap; 
   }
   
   @media (max-width: 768px) {

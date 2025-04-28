@@ -76,10 +76,11 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className="login-page">
+    <div className="login-form-container">
+      <h2 className="login-heading">Login</h2>
+      <form className="login-form" onSubmit={handleSubmit}>
+        <div className="login-form-group">
           <label>Email</label>
           <input
             type="email"
@@ -87,9 +88,10 @@ const Login = () => {
             value={credentials.email}
             onChange={handleChange}
             required
+            className="login-form-input"
           />
         </div>
-        <div>
+        <div className="login-form-group">
           <label>Password</label>
           <input
             type="password"
@@ -97,26 +99,30 @@ const Login = () => {
             value={credentials.password}
             onChange={handleChange}
             required
+            className="login-form-input"
           />
         </div>
-        <div>
+        <div className="login-form-group">
           <label>Role</label>
           <select
             name="role"
             value={credentials.role}
             onChange={handleChange}
             required
+            className="login-form-select"
           >
             <option value="Student">Student</option>
             <option value="Admin">Admin</option>
             <option value="Teacher">Teacher</option>
           </select>
         </div>
-        <div>
-          <button type="submit">Login</button>
+        <div className="login-form-button-wrapper">
+          <button type="submit" className="login-submit-button">Login</button>
         </div>
       </form>
     </div>
+  </div>
+  
   );
 };
 

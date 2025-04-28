@@ -36,7 +36,7 @@ const Sidebar = () => {
         <FaComments /> General Chat
       </div>
       <div className={`features-tabs ${tab === "Resources" ? "active-tab" : ""}`} onClick={() => handleTabClick("Announcements")}>
-        <FaBookmark /> Announcements
+        <FaBookmark /> Announcements / Notices
       </div>
       <div className={`features-tabs ${tab === "Chat" ? "active-tab" : ""}`} onClick={() => handleTabClick("Chat")}>
         <FaUsers /> Chat

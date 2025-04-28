@@ -2,7 +2,7 @@ import NoticesModel from "../models/notices.models.js";
 
 export const NoticeCreation = async(req , res)=>{
     try{
-        const{notices} = req.body ;
+        const{notices} = req.body;
         console.log(notices)
        const {title , description , author , attachments , targetAudience} = notices ;
        console.log(title , description)

@@ -8,7 +8,7 @@ const StudentSchema = new mongoose.Schema({
   rollno: {
     type: String,
     required: true,
-    unique: true // Ensure rollno is unique
+    unique: true 
   },
   email: {
     type: String,
