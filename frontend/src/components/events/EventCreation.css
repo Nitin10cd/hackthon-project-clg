@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a1d3b;
+}
+
+.event-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1c3550;
+  padding: 1rem;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 600px;
+  background-color: #0e2447;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(28, 27, 27, 0.15);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white ;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background-color: #1c3550;
+  transition: all 0.3s ease;
+  color : whitesmoke ;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  border-color: #4dabf7;
+  box-shadow: 0 0 8px rgba(77, 171, 247, 0.2);
+  background: #ffffff;
+  color : black ;
+}
+
+.full-width-textarea {
+  margin-top: 1.2rem;
+  width: 90%;
+  min-height: 120px;
+  resize: vertical;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  background-color: #1c3550;
+
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.full-width-textarea:focus {
+  border-color: #4dabf7;
+  box-shadow: 0 0 8px rgba(77, 171, 247, 0.2);
+  background: #ffffff;
+
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0.85rem;
+  background: linear-gradient(to right, #4dabf7, #339af0);
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(to right, #339af0, #228be6);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.loading-spinner {
+  font-size: 16px;
+  color: #007bff;
+  margin-top: 10px;
+}

@@ -1,0 +1,67 @@
+/* Navbar Styling */
+.navbar {
+  background-color: #101010; /* Dark background similar to the register page */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 1px solid #4caf50; /* Subtle green border */
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  color: #66bb6a; /* Green color to match theme */
+  font-size: 3rem;
+  margin-right: 8px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Navbar Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #c7c7c7; /* Soft white/gray text for links */
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #66bb6a; /* Green color on hover to match theme */
+}
+
+/* Logout Button */
+.logout-button button {
+  background-color: #2a2a2a; /* Darker button background */
+  color: #c7c7c7;
+  border: 1px solid #66bb6a; /* Green border */
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-button button:hover {
+  background-color: #66bb6a; /* Green on hover */
+  color: #101010; /* Dark background for text on hover */
+}

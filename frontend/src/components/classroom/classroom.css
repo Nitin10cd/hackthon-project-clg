@@ -1,0 +1,220 @@
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Classroom Container */
+.classroom-container {
+  display: flex;
+  height: 100vh;
+}
+
+.room-container{
+  gap: 10px;
+}
+.sidebar {
+  width: 300px;
+  background-color: #1f1f1f; /* Dark sidebar */
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-title {
+  font-size: 24px;
+  color: #ecf0f1; /* Light text */
+  margin-bottom: 20px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #1f1f1f; /* Matching background for main content */
+  border-left: 1px solid #2ecc71; /* Green left border */
+}
+
+.class-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.class-icon {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.class-header h2 {
+  font-size: 24px;
+  color: #ecf0f1; /* Light header text */
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.nav-tabs button {
+  background-color: #34495e; /* Dark gray button */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.nav-tabs button:hover {
+  background-color: #2ecc71; /* Green hover effect */
+}
+
+.nav-tabs .active-tab {
+  background-color: #2ecc71; /* Active tab color */
+}
+
+/* Content Box */
+.content-box {
+  background-color: #1f1f1f; /* Dark gray background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+/* Post Card */
+.post-card {
+  background-color: #2c3e50; /* Dark card background */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.post-card h3 {
+  font-size: 20px;
+  color: #ecf0f1; /* Light card title text */
+}
+
+.post-card p {
+  color: #bdc3c7; /* Lighter gray text */
+}
+
+/* Attachments Section */
+.attachments {
+  margin-top: 15px;
+}
+
+.attachments h4 {
+  font-size: 16px;
+  color: #ecf0f1; /* Light text */
+}
+
+.attachments ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.attachments ul li {
+  margin-bottom: 10px;
+}
+
+.attachments ul li a {
+  color: #2ecc71; /* Green links */
+  text-decoration: none;
+}
+
+.attachments ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Post Form */
+.post-form {
+  margin-top: 30px;
+}
+
+.post-form input,
+.post-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #242424; /* Dark input fields */
+  color: white;
+}
+
+.post-form button {
+  background-color: #2ecc71; /* Green button */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.post-form button:hover {
+  background-color: #27ae60; /* Darker green on hover */
+}
+
+/* Members Section */
+.member-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.member-list li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.member-list li .fa-user {
+  margin-right: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .classroom-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .class-header h2 {
+    font-size: 20px;
+  }
+
+  .nav-tabs button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Box Scrolling */
+.boxxx {
+  overflow: scroll;
+  height: 500px;
+}
+
+.boxxx::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}

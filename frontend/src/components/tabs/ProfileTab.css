@@ -1,0 +1,87 @@
+.profile-tab-container {
+  background-color: rgba(16, 16, 16, 0.8); /* Dark glass effect */
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  color: #f0f0f0;
+  width: 80%;
+  height: 100vh;
+  right: 0;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(60, 60, 60, 0.3);
+}
+
+/* Section Title */
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+/* Avatar Container */
+.avatar-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+/* Avatar Icon */
+.avatar-icon {
+  font-size: 100px;
+  color: #00ff88; /* Neon greenish matching your theme */
+}
+
+/* Camera Icon */
+.camera-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(20, 20, 20, 0.9);
+  padding: 6px;
+  border-radius: 50%;
+  color: #00ff88;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #00ff88;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.camera-icon:hover {
+  background-color: #00ff88;
+  color: #101010;
+  transform: scale(1.1);
+}
+
+/* Profile Name */
+.profile-name {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+/* Info Boxes */
+.profile-info-box {
+  background-color: rgba(24, 24, 24, 0.9);
+  border-radius: 12px;
+  padding: 14px 18px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 14px;
+  text-align: center;
+  font-size: 15px;
+  color: #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  transition: background-color 0.3s;
+}
+
+.profile-info-box:hover {
+  background-color: rgba(40, 40, 40, 0.9);
+}

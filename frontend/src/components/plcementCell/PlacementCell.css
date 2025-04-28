@@ -1,0 +1,182 @@
+
+.jobs-container {
+    min-height: 100vh;
+    padding-left: 10px;
+    width: 100%;
+    background: #101010;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jobs-heading {
+    font-size: 2.5rem;
+    color: #66bb6a;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.jobs-container > button {
+    margin-bottom: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.jobs-container > button:hover {
+    background-color: #388e3c;
+    transform: translateY(-3px);
+}
+
+.loading-message {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #66bb6a;
+    background: #101010;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.filter-button {
+    margin: 5px;
+    padding: 0.6rem 1.2rem;
+    background: #2a2a2a;
+    color: #c7c7c7;
+    border: 1px solid #4caf50;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+    background: #333;
+}
+
+.filter-button.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+.jobs-list {
+    width: 100%;
+    max-width: 1200px;
+    overflow-y: auto;
+    height: 75vh;
+    padding-right: 10px;
+}
+
+.job-card {
+    background: #1e1e1e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.job-title {
+    color: #66bb6a;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.job-company {
+    color: #c7c7c7;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+
+.job-location {
+    color: #aaaaaa;
+    margin-bottom: 0.5rem;
+}
+
+.remote-badge {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.job-type {
+    color: #c7c7c7;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.job-description {
+    color: #bbbbbb;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.apply-button {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.apply-button:hover {
+    background-color: #388e3c;
+    transform: translateY(-3px);
+}
+
+/* No Jobs Found Message */
+.no-jobs-message {
+    color: #888;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Scrollbar Customization */
+.jobs-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.jobs-list::-webkit-scrollbar-thumb {
+    background: #4caf50;
+    border-radius: 8px;
+}
+
+.jobs-list::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .jobs-list {
+        height: auto;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}

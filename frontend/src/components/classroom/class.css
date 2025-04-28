@@ -1,0 +1,278 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.room-container {
+    width: 80%;
+    display: grid;
+    padding: 20px;
+}
+
+.room-box {
+    background: linear-gradient(135deg, #4caf50, #28517c);
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.room-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.4);
+}
+
+.room-box p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.room-box button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto; /* Align button at the bottom */
+}
+
+.room-box button:hover {
+    background-color: #2980b9;
+}
+
+.join-dialog {
+    background-color: #181818;
+    padding: 20px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.room-student-container .room-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2,1fr);
+    width: 600px;
+    height: 200px;
+}
+
+.room-student-container .room-container button {
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(135deg, #4dd051, #055021);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+}
+
+.join-dialog input {
+    width: 200px;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #242424;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.join-dialog button {
+    background-color: #2ecc71;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 5px;
+    transition: background-color 0.3s;
+}
+
+.join-dialog button:hover {
+    background-color: #27ae60;
+}
+
+/* Teacher Classroom List */
+.teacher-classroom-list {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.teacher-classroom-list h3 {
+    color: #ecf0f1;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.teacher-classroom-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Responsive grid */
+}
+
+.teacher-classroom-card {
+    background-color: #105b0a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.teacher-classroom-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.teacher-classroom-card h4 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #ecf0f1;
+}
+
+.teacher-classroom-card p {
+    margin: 5px 0;
+    color: #bdc3c7;
+}
+
+.teacher-classroom-card button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.teacher-classroom-card button:hover {
+    background-color: #2980b9;
+}
+
+/* Teacher Form for Creating Class */
+.teacher-form-container {
+    padding: 30px;
+    background-color: #2c3e50;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.teacher-form-container h2 {
+    color: #ecf0f1;
+    margin-bottom: 20px;
+}
+
+.teacher-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #242424;
+    color: white;
+}
+
+.teacher-form button {
+    background-color: #2ecc71;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.teacher-form button:hover {
+    background-color: #27ae60;
+}
+
+/* Loading & Error States */
+.loading {
+    text-align: center;
+    font-size: 18px;
+    color: #f39c12;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 18px;
+    text-align: center;
+}
+.room-student-container {
+    display: flex;
+    justify-content: space-between;
+}
+.student-joined-class {
+    width: 400px;
+}
+.available-classes {
+    border-left: 0.5px solid green;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 10px;
+    overflow-y: scroll; 
+    width: 250px;
+    height: 600px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.available-classes .room-container {
+    width: 200px;
+}
+.available-classes::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.available-classes .room-container {
+    background: linear-gradient(135deg, #4caf50, #28517c);
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.available-classes .room-container p {
+    margin: 0;
+}
+.available-classes .room-container button {
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(135deg, #4dd051, #055021);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .room-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    .room-box {
+        width: 100%;
+    }
+}
