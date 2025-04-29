@@ -6,7 +6,7 @@ export const AppProvider = ({ children }) => {
   const [tab,setTab]=useState("Profile");
   const [friendChat,setFriendChat]=useState({});
   const [groupChat,setGroupChat]=useState({});
-  const [tabClick, setTabClick] = useState();
+  const [tabClick, setTabClick] = useState("Profile");
   const [isChatOpened,setIsChatOpened]=useState(false);
   const [isLoggedIn,setIsLoggedIn]=useState(false);
   const [user, setUser] = useState({});

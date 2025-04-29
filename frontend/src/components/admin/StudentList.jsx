@@ -77,6 +77,7 @@ const StudentList = () => {
               <td colSpan="4">No students found.</td>
             </tr>
           )}
+        
         </tbody>
       </table>
     </div>

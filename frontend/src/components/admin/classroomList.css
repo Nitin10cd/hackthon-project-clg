@@ -1,44 +1,44 @@
-.student-list-container {
-  background: #0f0f0f;
-  position: absolute;
-  bottom: 2px;
-  right: 0;
-  height: 80vh;
-  width: 75%;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.011);
-  color: white;
-  font-family: 'Segoe UI', sans-serif;
-  overflow-y: scroll;
-  overflow-x: hidden;
-
-  /* Scrollbar styling */
-  scrollbar-width: thin;
-  scrollbar-color: #00ff88 #0f0f0f; /* For Firefox */
-}
-
-/* Webkit browsers (Chrome, Edge, Safari) */
-.student-list-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.student-list-container::-webkit-scrollbar-track {
-  background: #0f0f0f;
-  border-radius: 12px;
-}
-
-.student-list-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00ff88, #006644);
-  border-radius: 12px;
-}
-
-.student-list-container::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00ff88, #004422);
-}
-
-  .student-list-container h2 {
+.classroom-list-container {
+    background: #0f0f0f;
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    height: 80vh;
+    width: 75%;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.011);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  
+    /* Scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: #00ff88 #0f0f0f; /* For Firefox */
+  }
+  
+  /* Webkit browsers (Chrome, Edge, Safari) */
+  .classroom-list-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .classroom-list-container::-webkit-scrollbar-track {
+    background: #0f0f0f;
+    border-radius: 12px;
+  }
+  
+  .classroom-list-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00ff88, #006644);
+    border-radius: 12px;
+  }
+  
+  .classroom-list-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00ff88, #004422);
+  }
+  
+  .classroom-list-container h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     font-size: 2rem;
@@ -49,28 +49,28 @@
     text-transform: uppercase;
   }
   
-  .student-table {
+  .classroom-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
     background-color: transparent;
   }
   
-  .student-table th, .student-table td {
+  .classroom-table th, .classroom-table td {
     padding: 14px 18px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     text-align: left;
     font-size: 15px;
   }
   
-  .student-table th {
+  .classroom-table th {
     background-color: #292929;
     color: #4caf50;
     font-weight: 600;
     text-transform: uppercase;
   }
   
-  .student-table tr:hover {
+  .classroom-table tr:hover {
     background-color: rgba(255, 255, 255, 0.05);
     transition: background-color 0.3s ease;
   }

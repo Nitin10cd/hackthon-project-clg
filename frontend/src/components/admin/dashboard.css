@@ -1,17 +1,44 @@
 /* Admin Dashboard */
 .dashboard-page {
-    min-height: 100vh;
-    background: #101010;
-    padding: 2rem;
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-  }
+  background: #0f0f0f;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  height: 84vh;
+  width: 75%;
+  padding: 2rem;
+  padding-top: 0px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  /* Scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #00ff88 #0f0f0f; /* For Firefox */
+}
+
+/* Webkit-based browsers */
+.dashboard-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dashboard-page::-webkit-scrollbar-track {
+  background: #0f0f0f;
+  border-radius: 10px;
+}
+
+.dashboard-page::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ff88, #005533);
+  border-radius: 10px;
+}
+
   
   .dashboard-heading {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     background: -webkit-linear-gradient(45deg, #4caf50, #2c6b2f);
     -webkit-background-clip: text;
@@ -21,18 +48,18 @@
   .stats-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
   
   .card {
     background: #1e1e1e;
-    padding: 1.2rem;
+    padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    height: 120px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,7 +86,7 @@
   .chart-container {
     background: #1e1e1e;
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
