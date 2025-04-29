@@ -20,6 +20,8 @@ import EventsPage from './components/events/EventPage';
 import Dashboard from './components/admin/Dashboard';
 import StudentList from './components/admin/StudentList';
 import TeacherComponent from './components/admin/TeacherComponent';
+import StartTest from './components/classroom/StartTest';
+import TestResults from './components/classroom/TestResults';
 
 
 const App = () => {
@@ -43,6 +45,8 @@ const App = () => {
             <Route path='/dashboard' element = {<Dashboard/>}/>
             <Route path='/student-list' element = {<StudentList/>} />
             <Route path='/teacher-list' element ={<TeacherComponent/>} />
+            <Route path='/test/:testId' element = {<StartTest/> } />
+            <Route path='/result/:testId' element = {<TestResults/>} />
           </Routes>
       </Router>
   );

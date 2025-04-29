@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import './stuClassroom.css';
-import { FaBook, FaUser, FaClipboardList } from 'react-icons/fa';
+import { FaBook, FaUser, FaClipboardList, FaTasks } from 'react-icons/fa';
 import JoinedClasses from './JoinedClasses';
+import TestList from './TestList';
 
 const StudentClassroom = () => {
   const { currentClass, setCurrentClass } = useApp();
   const [showMembers, setShowMembers] = useState(false);
   const [showPosts, setShowPosts] = useState(true);
+  const [showTest , setShowTest] = useState(false);
 
   useEffect(() => {
     const storedClass = localStorage.getItem('curr_classroom');
@@ -15,6 +17,7 @@ const StudentClassroom = () => {
       const parsedClass = JSON.parse(storedClass);
       setCurrentClass(parsedClass);
     }
+    console.log(currentClass)
   }, [setCurrentClass]);
 
   return (
@@ -42,6 +45,13 @@ const StudentClassroom = () => {
             setShowMembers(true);
           }} className={showMembers ? 'active-tab' : ''}>
             <FaUser /> Members
+          </button>
+          <button onClick={() => {
+            setShowPosts(false);
+            setShowMembers(false);
+            setShowTest(true)
+          }} className={showMembers ? 'active-tab' : ''}>
+            <FaTasks/> Assignments
           </button>
         </div>
 
@@ -88,6 +98,7 @@ const StudentClassroom = () => {
               </ul>
             </div>
           )}
+          {setShowTest && <TestList />}
         </div>
       </div>
     </div>

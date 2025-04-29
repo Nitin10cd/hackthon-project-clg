@@ -221,7 +221,8 @@ const Classroomlist = () => {
               />
               <button type="submit">Create Class</button>
             </form>
-          </div>): (     <div className="teacher-classroom-list">
+          </div>): (     
+          <div className="teacher-classroom-list">
             {teacherClassroom && teacherClassroom.length > 0 ? (
               <div className="teacher-classroom-grid">
                 {teacherClassroom.map((classroom, index) => (

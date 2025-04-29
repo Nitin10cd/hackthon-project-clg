@@ -3,6 +3,8 @@ import TeacherModel from "../models/teacher.models.js";
 import AdminModel from "../models/admin.models.js";
 import ClassroomModel from "../models/classroom.models.js";
 import PostModel from "../models/posts.classsroom.models.js";
+import Question from "../models/options.models.js";
+import Test from "../models/mcq.models.js";
 
 // check role for the google classroom
 export const checkRole = async (req, res) => {
@@ -281,12 +283,159 @@ export const getTeacherClassses = async (req,res) => {
   }
 }
 
-// function for questions
-export const questionsGeneration = async (req,res) => {
-  
+
+// controller for the questions
+
+export const createTest = async (req, res) => {
+  const { name, totalMarks, timeDuration, classroom, questions } = req.body;
+
+  try {
+    // Check if the classroom exists
+    const classroomExists = await ClassroomModel.findById(classroom);
+    if (!classroomExists) {
+      return res.status(404).json({ message: "Classroom not found" });
+    }
+
+    // Create a new test instance
+    const newTest = new Test({
+      name,
+      totalMarks,
+      timeDuration,
+      classroom,
+      questions,
+    });
+
+    // Save the new test to the database
+    await newTest.save();
+    res.status(201).json({ message: "Test created successfully", test: newTest });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error", error });
+  }
 };
 
-export const showReport = async (req,res) => {
-  
+export const getTestsForClassroom = async (req, res) => {
+  try {
+    const { classroomId } = req.params;
+    console.log(classroomId)
+
+    const tests = await Test.find({ classroom: classroomId }).populate('questions');
+    console.log("test:", tests)
+    if (!tests || tests.length === 0) {
+      return res.status(404).json({ message: 'No tests found for this classroom' });
+    }
+
+    return res.status(200).json({ tests });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Error fetching tests', error: error.message });
+  }
 };
+export const startTestForStudent = async (req, res) => {
+  try {
+    const { testId } = req.params;
+
+    const test = await Test.findById(testId).populate('questions');
+
+    if (!test) {
+      return res.status(404).json({ message: "Test not found" });
+    }
+
+    // Format questions to send only name and options (no correct answer)
+    const formattedQuestions = test.questions.map((q) => ({
+      _id: q._id,
+      name: q.name,
+      options: [q.optionA, q.optionB, q.optionC, q.optionD],
+    }));
+
+    return res.status(200).json({
+      test: {
+        _id: test._id,
+        name: test.name,
+        timeDuration: test.timeDuration,
+        questions: formattedQuestions,
+      },
+    });
+  } catch (error) {
+    console.error("Error in startTestForStudent:", error);
+    return res.status(500).json({ message: "Error starting test", error: error.message });
+  }
+};
+
+export const submitTest = async (req, res) => {
+  try {
+    const { studentId, testId, answers } = req.body;
+    
+    const test = await Test.findById(testId); // No populate needed
+
+    if (!test) {
+      return res.status(404).json({ message: 'Test not found' });
+    }
+
+    const student = await StudentModel.findById(studentId);
+    if (!student) {
+      return res.status(404).json({ message: 'Student not found' });
+    }
+
+    let correctAnswers = 0;
+    const totalQuestions = test.questions.length;
+    const marksPerQuestion = test.totalMarks / totalQuestions;
+
+    test.questions.forEach((question, index) => {
+      const questionIndex = index.toString();
+      const selectedAnswer = answers[questionIndex];
+
+      if (
+        selectedAnswer &&
+        selectedAnswer.trim().toLowerCase() === question.answer.trim().toLowerCase()
+      ) {
+        correctAnswers += 1; // increment by 1 for each correct
+      }
+    });
+
+    const finalScore = correctAnswers * marksPerQuestion;
+
+    test.submissions.push({
+      student: studentId,
+      marks: Math.round(finalScore * 100) / 100,
+    });
+
+    await test.save();
+
+    return res.status(200).json({
+      message: 'Test submitted successfully',
+      correctAnswers,
+      totalQuestions,
+      score: Math.round(finalScore * 100) / 100,
+      totalMarks: test.totalMarks,
+    });
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Error submitting test', error: error.message });
+  }
+};
+
+
+
+export const getTestResults = async (req, res) => {
+  try {
+    const { testId } = req.params;
+
+    const test = await Test.findById(testId).populate({
+      path: 'submissions.student',
+      select: 'name rollno'
+    });
+    
+    if (!test) {
+      return res.status(404).json({ message: 'Test not found' });
+    }
+
+    return res.status(200).json({ submissions: test.submissions });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Error fetching test results', error: error.message });
+  }
+};
+
 

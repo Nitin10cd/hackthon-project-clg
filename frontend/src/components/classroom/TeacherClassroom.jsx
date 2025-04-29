@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import './classroom.css';
-import { FaBook, FaUser, FaClipboardList, FaPodcast } from 'react-icons/fa';
+import { FaBook, FaUser, FaClipboardList, FaPodcast, FaTasks, FaSeedling } from 'react-icons/fa';
 import JoinedClasses from './JoinedClasses';
+import CreateTest from './CreateTest';
+import Submissions from './Submissions';
 
 const TeacherClassroom = () => {
   const { currentClass, setCurrentClass } = useApp();
@@ -12,6 +14,8 @@ const TeacherClassroom = () => {
   const [content, setContent] = useState('');
   const [file, setFile] = useState(null);
   const [doPost, setDoPost] = useState(false);
+  const [createAss , setCreaateAss] = useState(false); 
+  const [showResult, setShowResult] = useState(false);
 
   useEffect(() => {
     const storedClass = localStorage.getItem('curr_classroom');
@@ -73,7 +77,9 @@ const TeacherClassroom = () => {
             <button onClick={() => {
               setShowPosts(true);
               setShowMembers(false);
-              setDoPost(false)
+              setDoPost(false);
+              setCreaateAss(false);
+              setShowResult(false);
             }} className={showPosts ? 'active-tab' : ''}>
               <FaClipboardList /> Posts
             </button>
@@ -81,15 +87,37 @@ const TeacherClassroom = () => {
               setShowPosts(false);
               setShowMembers(true);
               setDoPost(false);
+              setCreaateAss(false);
+              setShowResult(false)
             }} className={showMembers ? 'active-tab' : ''}>
               <FaUser /> Members
             </button>
             <button onClick={() => {
               setShowPosts(true);
               setShowMembers(false);
+              setCreaateAss(false)
+              setShowResult(false)
               setDoPost(prev => !prev);
             }} className={showPosts ? 'active-tab' : ''}>
               <FaPodcast /> Add Post
+            </button>
+            <button onClick={() => {
+              setShowPosts(false);
+              setShowMembers(false);
+              setDoPost(false);
+              setShowResult(false)
+              setCreaateAss(prev => !prev);
+            }} className={showPosts ? 'active-tab' : ''}>
+              <FaTasks /> Add Assignments
+            </button>
+            <button onClick={() => {
+               setShowPosts(false);
+               setShowMembers(false);
+               setDoPost(false);
+               setCreaateAss(false);
+               setShowResult(true)
+            }} className={showPosts ? 'active-tab' : ''}>
+              <FaSeedling /> Submitted
             </button>
           </div>
 
@@ -163,6 +191,12 @@ const TeacherClassroom = () => {
                 </ul>
               </div>
             )}
+            {
+              createAss && <CreateTest/>
+            }
+            {
+              showResult && <Submissions />
+            }
           </div>
         </div>
       </div>
