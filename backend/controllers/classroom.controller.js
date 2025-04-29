@@ -365,9 +365,8 @@ export const startTestForStudent = async (req, res) => {
 export const submitTest = async (req, res) => {
   try {
     const { studentId, testId, answers } = req.body;
-    
-    const test = await Test.findById(testId); // No populate needed
 
+    const test = await Test.findById(testId);
     if (!test) {
       return res.status(404).json({ message: 'Test not found' });
     }
@@ -380,21 +379,20 @@ export const submitTest = async (req, res) => {
     let correctAnswers = 0;
     const totalQuestions = test.questions.length;
     const marksPerQuestion = test.totalMarks / totalQuestions;
+    for (const question of test.questions) {
+      const questionId = question._id.toString(); // assuming each question has a unique _id
 
-    test.questions.forEach((question, index) => {
-      const questionIndex = index.toString();
-      const selectedAnswer = answers[questionIndex];
+      const selectedAnswer = answers[questionId]; // match by question ID
 
       if (
         selectedAnswer &&
         selectedAnswer.trim().toLowerCase() === question.answer.trim().toLowerCase()
       ) {
-        correctAnswers += 1; // increment by 1 for each correct
+        correctAnswers++;
       }
-    });
+    }
 
     const finalScore = correctAnswers * marksPerQuestion;
-
     test.submissions.push({
       student: studentId,
       marks: Math.round(finalScore * 100) / 100,
@@ -415,6 +413,7 @@ export const submitTest = async (req, res) => {
     return res.status(500).json({ message: 'Error submitting test', error: error.message });
   }
 };
+
 
 
 

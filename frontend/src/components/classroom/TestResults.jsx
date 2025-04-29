@@ -37,7 +37,7 @@ const TestResults = () => {
         {results.map((result) => (
           <div key={result.student?._id || Math.random()} className="test-result-item">
             <p className="student-name">{result.student?.name || "Unnamed Student"}</p>
-            <p className="marks">Marks: {result.marks}</p>
+            <button>Marks:{result.marks}</button>
           </div>
         ))}
       </div>

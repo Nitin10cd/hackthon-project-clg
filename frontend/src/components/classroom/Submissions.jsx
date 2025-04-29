@@ -40,13 +40,14 @@ const Submissions = () => {
           <p className="no-tests">No tests available.</p>
         ) : (
           tests.map((test) => (
-            <div key={test._id} className="test-card">
+            <div key={test._id} style={{"backgroundColor": "#444", padding: "10px" , display: "flex", justifyContent: "space-between"}} className="test-card">
               <h3>{test.name}</h3>
               <button
+                style={{width: "200px", height: "40px"}}
                 className="view-result-btn"
                 onClick={() => viewResult(test._id)}
               >
-                View Submission Result
+                View Submission
               </button>
             </div>
           ))

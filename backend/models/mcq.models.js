@@ -34,7 +34,6 @@ const TestSchema = new Schema({
     },
     marks: {
       type: Number,
-      default: 0,
     }
   }]
 });

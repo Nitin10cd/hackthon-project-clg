@@ -1,0 +1,116 @@
+/* Test.css */
+
+.starttest-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #232526, #414345);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .starttest-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+  }
+  
+  .starttest-header h1 {
+    font-size: 2rem;
+    color: #f9fafb;
+  }
+  
+  .timer {
+    font-size: 1.2rem;
+    background: #ff4e50;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+  
+  .question-container {
+    background: #444;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    animation: slideIn 0.5s ease forwards;
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  .question-number {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+  }
+  
+  .question-text {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: #ecf0f1;
+  }
+  
+  .options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .option {
+    background: linear-gradient(135deg, #232526, #414345);
+    padding: 1rem;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+  
+  .option:hover {
+    background: #7bff7bfa;
+  }
+  
+  .option input {
+    margin-right: 1rem;
+    accent-color: #1abc9c;
+  }
+  
+  .option.selected {
+    background: #1abc9c;
+    color: #000;
+  }
+  
+  .submit-test-btn {
+    margin-top: 2rem;
+    background: #7bff7bfa;
+    border: none;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 200px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-test-btn:hover {
+    background: #7bff7bfa;
+  }
+  
+  .starttest-loading {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 10rem;
+  }
+  
