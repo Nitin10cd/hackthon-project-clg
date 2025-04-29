@@ -1,59 +1,59 @@
-/* Navbar Styling */
-.navbar {
-  background-color: #101010; /* Dark background similar to the register page */
-  color: #fff;
+.navbar-container {
+  background-color: #f3efff; 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 30px;
+  padding: 12px 30px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-bottom: 1px solid #4caf50; /* Subtle green border */
+  border-bottom: 2px solid #d1b3ff;
 }
 
-/* Logo Section */
-.logo-section {
+.navbar-logo {
   display: flex;
   align-items: center;
 }
 
-.logo-icon {
-  color: #66bb6a; /* Green color to match theme */
-  font-size: 3rem;
-  margin-right: 8px;
+.navbar-logo-icon {
+  color: #4a148c;
+  font-size: 2.5rem;
+  margin-right: 10px;
 }
 
-.logo-text {
+.navbar-logo-text {
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1;
+  color: #4b2a85; 
 }
 
-/* Navbar Links */
-.nav-links {
+/* Navigation Links */
+.navbar-links {
   display: flex;
   gap: 30px;
 }
 
-.nav-links a {
-  color: #c7c7c7; /* Soft white/gray text for links */
+.navbar-link {
+  color: #6a1b9a; /* Medium purple */
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #66bb6a; /* Green color on hover to match theme */
+.navbar-link:hover {
+  color: #8e24aa; /* Brighter purple */
 }
 
-/* Logout Button */
-.logout-button button {
-  background-color: #2a2a2a; /* Darker button background */
-  color: #c7c7c7;
-  border: 1px solid #66bb6a; /* Green border */
+/* Logout Section */
+.navbar-logout-btn {
+  background-color: #e9dbff;
+  color: #4a148c;
+  font-weight: bold;
+  border: 1px solid #b388ff;
   border-radius: 8px;
-  padding: 6px 12px;
+  padding: 8px 14px;
   font-size: 0.95rem;
   cursor: pointer;
   display: flex;
@@ -61,7 +61,7 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.logout-button button:hover {
-  background-color: #66bb6a; /* Green on hover */
-  color: #101010; /* Dark background for text on hover */
+.navbar-logout-btn:hover {
+  background-color: #4a148c;
+  color: white;
 }

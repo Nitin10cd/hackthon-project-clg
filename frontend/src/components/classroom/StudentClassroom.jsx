@@ -43,6 +43,7 @@ const StudentClassroom = () => {
           <button onClick={() => {
             setShowPosts(false);
             setShowMembers(true);
+            setShowTest(false)
           }} className={showMembers ? 'active-tab' : ''}>
             <FaUser /> Members
           </button>
@@ -98,7 +99,7 @@ const StudentClassroom = () => {
               </ul>
             </div>
           )}
-          {setShowTest && <TestList />}
+          {setShowTest &&( <TestList />)}
         </div>
       </div>
     </div>

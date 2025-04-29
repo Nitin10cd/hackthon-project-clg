@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useApp } from "../../context/AppContext";
-import "./Teststu.css"; 
+import "./Teststu.css";
 
 const StartTest = () => {
   const { testId } = useParams();
@@ -40,12 +40,6 @@ const StartTest = () => {
       ...prev,
       [questionId]: option,
     }));
-
-    setTimeout(() => {
-      if (currentQuestionIndex < test.questions.length - 1) {
-        setCurrentQuestionIndex((prev) => prev + 1);
-      }
-    }, 300);
   };
 
   const handleSubmit = async () => {
@@ -69,7 +63,19 @@ const StartTest = () => {
     }
   };
 
-  if (!test) {
+  const handleNext = () => {
+    if (currentQuestionIndex < test.questions.length - 1) {
+      setCurrentQuestionIndex((prev) => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex((prev) => prev - 1);
+    }
+  };
+
+  if (!test || !test.questions || !Array.isArray(test.questions)) {
     return <div className="starttest-loading">Loading test...</div>;
   }
 
@@ -91,7 +97,10 @@ const StartTest = () => {
         <h2 className="question-text">{currentQuestion.name}</h2>
         <div className="options-list">
           {currentQuestion.options.map((option, index) => (
-            <label key={index} className={`option ${answers[currentQuestion._id] === option ? "selected" : ""}`}>
+            <label
+              key={index}
+              className={`option ${answers[currentQuestion._id] === option ? "selected" : ""}`}
+            >
               <input
                 type="radio"
                 name={currentQuestion._id}
@@ -105,6 +114,25 @@ const StartTest = () => {
         </div>
       </div>
 
+      <div className="question-navigation">
+        <button
+          className="nav-btn"
+          onClick={handlePrev}
+          disabled={currentQuestionIndex === 0}
+        >
+          ⬅ Previous
+        </button>
+
+        <button
+          className="nav-btn"
+          onClick={handleNext}
+          disabled={currentQuestionIndex === test.questions.length - 1}
+        >
+          Next ➡
+        </button>
+      </div>
+
+      {/* Show submit button only on last question */}
       {currentQuestionIndex === test.questions.length - 1 && (
         <button
           className="submit-test-btn"

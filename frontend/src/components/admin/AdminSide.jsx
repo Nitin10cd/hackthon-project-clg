@@ -1,20 +1,22 @@
 import "../Sidebar.css";
 import {
-  FaUser,         // Profile
-  FaChalkboardTeacher, // Classrooms
-  FaUserGraduate,  // Students
-  FaChalkboard,    // Teachers
-  FaLayerGroup,    // Groups
-  FaTachometerAlt, // Dashboard
+  FaUser,                  // Profile
+  FaChalkboardTeacher,     // Classrooms
+  FaUserGraduate,          // Students
+  FaChalkboard,            // Teachers
+  FaLayerGroup,            // Groups
+  FaTachometerAlt,         // Dashboard
+  FaCalendarPlus,          // Create Events
+  FaBullhorn,              // Create Notices
+  FaRegCalendarAlt,        // Events
+  FaStickyNote,            // Notices
 } from "react-icons/fa";
 
 import { useApp } from "../../context/AppContext";
-import { useState } from "react";
 
 const AdminSide = () => {
-  const { admin ,tabClick,setTabClick} = useApp();
-  
-  
+  const { admin, tabClick, setTabClick } = useApp();
+
   const handleTabClick = (label) => {
     setTabClick(label);
   };
@@ -38,6 +40,18 @@ const AdminSide = () => {
       </div>
       <div className={`features-tabs ${tabClick === "Dashboard" ? "active-tab" : ""}`} onClick={() => handleTabClick("Dashboard")}>
         <FaTachometerAlt /> Dashboard
+      </div>
+      <div className={`features-tabs ${tabClick === "Create Events" ? "active-tab" : ""}`} onClick={() => handleTabClick("Create Events")}>
+        <FaCalendarPlus /> Create Events
+      </div>
+      <div className={`features-tabs ${tabClick === "Create Notices" ? "active-tab" : ""}`} onClick={() => handleTabClick("Create Notices")}>
+        <FaBullhorn /> Create Notices
+      </div>
+      <div className={`features-tabs ${tabClick === "Events" ? "active-tab" : ""}`} onClick={() => handleTabClick("Events")}>
+        <FaRegCalendarAlt /> Events
+      </div>
+      <div className={`features-tabs ${tabClick === "Notices" ? "active-tab" : ""}`} onClick={() => handleTabClick("Notices")}>
+        <FaStickyNote /> Notices
       </div>
     </div>
   );

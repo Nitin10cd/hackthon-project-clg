@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.create-blog-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.create-blog-heading {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+}
+
+.alert {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.alert.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.create-blog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.form-textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+.submit-button {
+  padding: 14px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #357ab8;
+}
+
+.submit-button:disabled {
+  background-color: #a2c0e2;
+  cursor: not-allowed;
+}

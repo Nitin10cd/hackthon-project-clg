@@ -13,12 +13,13 @@ const EventCreation = () => {
     description: '',
     image: '',
     category: '',
-    organizer: ''
+    organizer: '' ,
+    eventfor : ""
   });
 
   const [generatedDescription, setGeneratedDescription] = useState('');
   const [generateImage, setGenerateImage] = useState('');
-  const [loading, setLoading] = useState(false);  // Loading state for AI content
+  const [loading, setLoading] = useState(false);  
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -29,7 +30,7 @@ const EventCreation = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/events/eventcreation", { eventData , generateImage , generatedDescription }, { withCredentials: true });
+      const res = await axios.post("http://localhost:5000/api/events/eventcreation", { eventData , generateImage , generatedDescription });
       if (res.data.success) {
         toast.success("Event Created");
         navigate("/events");
@@ -48,7 +49,7 @@ const EventCreation = () => {
         try {
           const res = await axios.post("http://localhost:5000/api/events/generatecontent", {
             title: eventData.title,
-            category: eventData.category
+            category: eventData.category 
           });
           if (res.data && res.data.response) {
             console.log(res.data)
@@ -65,6 +66,8 @@ const EventCreation = () => {
 
     generateAiData();
   }, [state]);
+
+  console.log(eventData)
 
   return (
     <div className="event-wrapper">
@@ -129,6 +132,12 @@ const EventCreation = () => {
             value={eventData.image || generateImage}
             onChange={handleChange}
           />
+          <input 
+          type='text' 
+          name='eventfor'
+          placeholder='select target auidence '
+          value={eventData.eventfor} 
+          onChange={handleChange}/>
         </div>
 
         <textarea

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './NoticeCreation.css'; // Importing CSS file
+import './NoticeCreation.css'; 
+import noticeImg from "../notices/notice.png"
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 
@@ -30,12 +31,18 @@ const NoticeCreation = () => {
             console.log(storeduser)
             const userrole = storeduser ? JSON.parse(storeduser).role : undefined;
             console.log(userrole)
-            if (userrole == 'admin' || userrole == 'teacher') {
-                const res = await axios.post("http://localhost:5000/api/notices/createnotice", { notices: notice }, { withCredentials: true });
+            if (userrole == 'Admin' || userrole == 'Teacher') {
+                const res = await axios.post("http://localhost:5000/api/notices/createnotice", { notices: notice });
                 console.log(res.data);
                 if (res.data.success) {
                     toast.success("Notice created successfully");
-                    //email creation
+                    setNotice({
+                        title: '',
+                        description: '',
+                        author: '',
+                        targetAudience: '',
+                        attachments: null,
+                    })
                     EmailFetches();
                 }
             }
@@ -52,7 +59,7 @@ const NoticeCreation = () => {
 
     const EmailFetches = async () => {
         try {
-            const res = await axios.get("http://localhost:5000/api/notices/fetchstudents");
+            const res = await axios.get("http://localhost:5000/api/notices/notices");
             console.log(res.data);
             let emails = [];
 
@@ -133,12 +140,12 @@ const NoticeCreation = () => {
                         multiple
                     />
 
-                    <button type="submit">Create Notice</button>
+                    <button className='button' type="submit" style={{  background: "rgba(36, 12, 63, 0.5)"}}>Create Notice</button>
                 </form>
             </div>
 
             <div className="notice-image-container">
-                <img src="/src/assets/6502423.jpg" alt="Notice Illustration" />
+                <img src={noticeImg} alt="Notice Illustration" />
             </div>
 
             <ToastContainer />

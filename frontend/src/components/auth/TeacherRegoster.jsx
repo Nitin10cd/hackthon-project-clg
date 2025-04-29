@@ -52,7 +52,7 @@ const TeacherRegister = () => {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('isloggedIn', true);
         setUser(response.data.teacher);
-        navigate('/');
+        navigate('/home');
       }
     } catch (error) {
       toast.error(error.response?.data?.message || 'Registration failed. Please try again.');

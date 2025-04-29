@@ -28,7 +28,10 @@ const __dirname = dirname(__filename);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 mongoose.connect("mongodb://localhost:27017/database");
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  credentials: true 
+}));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);

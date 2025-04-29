@@ -1,108 +1,119 @@
+/* Student List - Purple & Whitish Glass Theme */
 .student-list-container {
-  background: #0f0f0f;
   position: absolute;
   bottom: 2px;
   right: 0;
   height: 80vh;
   width: 75%;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.011);
-  color: white;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgb(60, 0, 128);
   font-family: 'Segoe UI', sans-serif;
   overflow-y: scroll;
   overflow-x: hidden;
 
-  /* Scrollbar styling */
+  /* Scrollbar Styling */
   scrollbar-width: thin;
-  scrollbar-color: #00ff88 #0f0f0f; /* For Firefox */
+  scrollbar-color: #c49fff #1e1533;
 }
-
-/* Webkit browsers (Chrome, Edge, Safari) */
+td {
+  color: #2a1055;
+}
 .student-list-container::-webkit-scrollbar {
   width: 8px;
 }
 
 .student-list-container::-webkit-scrollbar-track {
-  background: #0f0f0f;
+  background: #2a1055;
   border-radius: 12px;
 }
 
 .student-list-container::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00ff88, #006644);
+  background: linear-gradient(180deg, #d6c1ff, #a370ff);
   border-radius: 12px;
 }
 
 .student-list-container::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00ff88, #004422);
+  background: linear-gradient(180deg, #f1e4ff, #844dff);
 }
 
-  .student-list-container h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    font-weight: 700;
-    background: -webkit-linear-gradient(45deg, #4caf50, #2c6b2f);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-transform: uppercase;
-  }
-  
-  .student-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    background-color: transparent;
-  }
-  
-  .student-table th, .student-table td {
-    padding: 14px 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: left;
-    font-size: 15px;
-  }
-  
-  .student-table th {
-    background-color: #292929;
-    color: #4caf50;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  
-  .student-table tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: background-color 0.3s ease;
-  }
-  
-  .view-btn, .delete-btn {
-    padding: 6px 14px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  .view-btn {
-    background: linear-gradient(45deg, #4caf50, #2c6b2f);
-    color: white;
-  }
-  
-  .view-btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #2c6b2f, #4caf50);
-  }
-  
-  .delete-btn {
-    background: linear-gradient(45deg, #ff5f6d, #ffc371);
-    color: white;
-  }
-  
-  .delete-btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #ffc371, #ff5f6d);
-  }
-  
+.student-list-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #b88cff, #e4d6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* Table */
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #dacfff;
+}
+
+.student-table th, .student-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+  font-size: 15px;
+}
+
+.student-table th {
+  background-color: #4a148c;
+  color: #e0c3ff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.student-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  transition: background-color 0.3s ease;
+}
+
+/* Buttons */
+.view-btn, .delete-btn {
+  padding: 7px 16px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* View Button - Elegant Purple Gradient */
+.view-btn {
+  background: linear-gradient(45deg, #b58eff, #6d33cc);
+  color: white;
+  box-shadow: 0 0 8px rgba(181, 142, 255, 0.4);
+}
+
+.view-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #6d33cc, #b58eff);
+  box-shadow: 0 0 12px rgba(181, 142, 255, 0.6);
+}
+
+/* Delete Button - Soft Pink Gradient */
+.delete-btn {
+  background: linear-gradient(45deg, #ff7db8, #ffc5c5);
+  color: white;
+  box-shadow: 0 0 8px rgba(255, 125, 184, 0.4);
+}
+
+.delete-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #ffc5c5, #ff7db8);
+  box-shadow: 0 0 12px rgba(255, 125, 184, 0.6);
+}

@@ -47,7 +47,7 @@ const StudentRegister = () => {
       const response = await axios.post('http://localhost:5000/api/auth/stuRegister', user);
       if (response.status === 201) {
         toast.success('Registration successful!');
-        navigate('/');
+        navigate('/home');
       }
     } catch (error) {
       toast.error(error.response?.data?.message || 'Registration failed. Please try again.');

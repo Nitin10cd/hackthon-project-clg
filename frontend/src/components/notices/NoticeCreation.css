@@ -1,78 +1,115 @@
+/* PURPLE & WHITISH GLASS THEME FOR NOTICE FORM */
+
 .notice-main-container {
-    display: flex;
-    justify-content: center;
-    margin: 40px auto;
-    padding: 30px;
-    max-width: 1000px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    flex-wrap: wrap; 
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 16px;
+  flex-wrap: wrap;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  font-family: 'Segoe UI', sans-serif;
+  color:#372059;
+}
+
+@media (max-width: 768px) {
+  .notice-main-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
   }
-  
-  @media (max-width: 768px) {
-    .notice-main-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  
-    
-    .notice-form-container {
-      flex: 1;
-      padding: 20px;
-    }
-    
-    .notice-form-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-    
-    .notice-form {
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .notice-form input,
-    .notice-form textarea {
-      margin-bottom: 15px;
-      padding: 12px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    
-    .notice-form input[type="file"] {
-      padding: 8px;
-    }
-    
-    .notice-form button {
-      padding: 12px;
-      font-size: 18px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    
-    .notice-form button:hover {
-      background-color: #45a049;
-    }
-    
-    .notice-image-container {
-      flex: 1;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .notice-image-container img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-    
+}
+
+.notice-form-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.notice-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #372059, #6b4cab);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.notice-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.notice-form input,
+.notice-form textarea {
+  margin-bottom: 15px;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid #cfaeff;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.notice-form input[type="file"] {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #dbcfff;
+}
+
+.notice-form input::placeholder,
+.notice-form textarea::placeholder {
+  color: #cdbbe9;
+}
+
+.notice-form input:focus,
+.notice-form textarea:focus {
+  border-color: #e1c7ff;
+  box-shadow: 0 0 10px rgba(209, 170, 255, 0.3);
+}
+
+.button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background: rgba(36, 12, 63, 0.5);
+  color: #fff;
+  border: none;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.notice-image-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.notice-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  width: 700px;
+  height: 700px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notice-image-container img:hover {
+}

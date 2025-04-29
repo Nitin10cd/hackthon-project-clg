@@ -19,6 +19,10 @@ const eventSchema = new mongoose.Schema({
     enum: ['Useful', 'NotUseful'] ,
     
   }],
+  eventfor: {
+    type: String,
+    required: true
+  },
   polls : [
     {
       type : mongoose.Schema.Types.ObjectId ,

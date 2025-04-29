@@ -4,20 +4,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #101010; /* Darker black background for a more moody look */
+    background: #ffffff; /* White background */
     padding: 2rem;
 }
 
 /* Container for the form */
 .register-form-container {
-    background: #1e1e1e; /* Deep charcoal grey background */
+    background: #f3f3f3; /* Light grey background */
     padding: 2.5rem 3rem;
     border-radius: 12px;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5); /* Deeper shadow for a more dramatic look */
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1); /* Soft shadow for a clean look */
     width: 100%;
     max-width: 800px;
     backdrop-filter: blur(8px); /* Glassmorphism effect */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for a glassy effect */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border for glassy effect */
 }
 
 /* Heading Style */
@@ -26,13 +26,13 @@
     margin-bottom: 2rem;
     font-size: 2.6rem;
     font-weight: 700;
-    color: #ffffff; /* White text */
+    color: #6a1b9a; /* Purple text */
     text-transform: uppercase;
     letter-spacing: 4px;
-    background: -webkit-linear-gradient(45deg, #4caf50, #2c6b2f); /* Bright natural green gradient */
+    background: -webkit-linear-gradient(45deg, #6a1b9a, #9c27b0); /* Gradient for heading */
     -webkit-background-clip: text;
     color: transparent;
-    text-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Strong shadow for extra depth */
+    text-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Shadow for extra depth */
 }
 
 /* Form Layout */
@@ -58,7 +58,7 @@
 .form-group label {
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
-    color: #c7c7c7; /* Light grey text for labels */
+    color: #4a148c; /* Dark purple text for labels */
     font-weight: 600;
     text-transform: capitalize;
 }
@@ -67,11 +67,11 @@
 .form-input,
 .form-select {
     padding: 1rem 1.5rem;
-    background: #2a2a2a; /* Dark grey input background */
-    border: 1px solid #4caf50; /* Green border for inputs */
+    background: #ffffff; /* White input background */
+    border: 1px solid #6a1b9a; /* Purple border for inputs */
     border-radius: 8px;
     font-size: 1.1rem;
-    color: #ffffff; /* White text inside input */
+    color: #4a148c; /* Purple text inside input */
     outline: none;
     transition: all 0.3s ease;
 }
@@ -85,13 +85,13 @@
 /* Focus & Hover Effects */
 .form-input:focus,
 .form-select:focus {
-    border-color: #66bb6a; /* Brighter green border on focus */
-    box-shadow: 0 0 10px rgba(102, 187, 106, 0.3); /* Soft glowing green */
+    border-color: #9c27b0; /* Brighter purple border on focus */
+    box-shadow: 0 0 10px rgba(156, 39, 176, 0.3); /* Soft glowing purple */
 }
 
 .form-input:hover,
 .form-select:hover {
-    background: #333333; /* Slightly lighter grey on hover */
+    background: #f7f7f7; /* Slightly lighter background on hover */
 }
 
 /* Submit Button */
@@ -103,7 +103,7 @@
 .submit-button {
     padding: 1rem 2.8rem;
     font-size: 1.2rem;
-    background-color: #4caf50; /* Fresh green button */
+    background-color: #6a1b9a; /* Purple button */
     color: white;
     border: none;
     border-radius: 8px;
@@ -114,7 +114,7 @@
 
 /* Hover and Active States for Submit Button */
 .submit-button:hover {
-    background-color: #388e3c; /* Darker green on hover */
+    background-color: #9c27b0; /* Lighter purple on hover */
     transform: translateY(-4px); /* Lift effect on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
 }
@@ -124,33 +124,33 @@
 }
 
 .submit-button:focus {
-    outline: 3px solid #66bb6a;
+    outline: 3px solid #9c27b0; /* Focus outline */
     outline-offset: 3px;
 }
 
-/* Page Layout */
+/* Page Layout for Login */
 .login-page {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #101010; /* Dark black background */
+    background: #ffffff; /* White background */
     padding: 2rem;
 }
 
 /* Container for the login form */
 .login-form-container {
-    background: #1e1e1e; /* Dark grey glassy background */
+    background: #f3f3f3; /* Light grey background */
     padding: 2.5rem 3rem;
     border-radius: 12px;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1); /* Soft shadow */
     width: 100%;
     max-width: 600px;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px); /* Glassmorphism effect */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
 }
 
-/* Heading Style */
+/* Heading Style for Login */
 .login-heading {
     text-align: center;
     margin-bottom: 2rem;
@@ -159,9 +159,9 @@
     color: transparent;
     text-transform: uppercase;
     letter-spacing: 4px;
-    background: -webkit-linear-gradient(45deg, #4caf50, #2c6b2f);
+    background: -webkit-linear-gradient(45deg, #6a1b9a, #9c27b0); /* Gradient for heading */
     -webkit-background-clip: text;
-    text-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Shadow */
 }
 
 /* Login Form */
@@ -181,7 +181,7 @@
 .login-form-group label {
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
-    color: #c7c7c7;
+    color: #4a148c; /* Dark purple labels */
     font-weight: 600;
     text-transform: capitalize;
 }
@@ -190,11 +190,11 @@
 .login-form-input,
 .login-form-select {
     padding: 1rem 1.5rem;
-    background: #2a2a2a;
-    border: 1px solid #4caf50;
+    background: #ffffff;
+    border: 1px solid #6a1b9a; /* Purple borders */
     border-radius: 8px;
     font-size: 1.1rem;
-    color: #ffffff;
+    color: #4a148c;
     outline: none;
     transition: all 0.3s ease;
 }
@@ -208,16 +208,16 @@
 /* Focus and hover effects */
 .login-form-input:focus,
 .login-form-select:focus {
-    border-color: #66bb6a;
-    box-shadow: 0 0 10px rgba(102, 187, 106, 0.3);
+    border-color: #9c27b0;
+    box-shadow: 0 0 10px rgba(156, 39, 176, 0.3);
 }
 
 .login-form-input:hover,
 .login-form-select:hover {
-    background: #333333;
+    background: #f7f7f7;
 }
 
-/* Submit Button */
+/* Submit Button for Login */
 .login-form-button-wrapper {
     margin-top: 2rem;
     text-align: center;
@@ -226,7 +226,7 @@
 .login-submit-button {
     padding: 1rem 2.8rem;
     font-size: 1.2rem;
-    background-color: #4caf50;
+    background-color: #6a1b9a; /* Purple */
     color: white;
     border: none;
     border-radius: 8px;
@@ -237,7 +237,7 @@
 
 /* Button hover and active states */
 .login-submit-button:hover {
-    background-color: #388e3c;
+    background-color: #9c27b0;
     transform: translateY(-4px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
@@ -247,6 +247,6 @@
 }
 
 .login-submit-button:focus {
-    outline: 3px solid #66bb6a;
+    outline: 3px solid #9c27b0;
     outline-offset: 3px;
 }

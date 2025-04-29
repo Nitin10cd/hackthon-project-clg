@@ -64,7 +64,7 @@ const Login = () => {
           localStorage.setItem('user', JSON.stringify(user));
           localStorage.setItem('isloggedIn', true);
           toast.success('Login successful!');
-          setTimeout(() => navigate('/'), 500);
+          setTimeout(() => navigate('/home'), 500);
         } else {
           toast.error('Login failed. Please try again.');
         }

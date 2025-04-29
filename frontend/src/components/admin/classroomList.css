@@ -1,108 +1,123 @@
+/* Stunning Glassmorphic Classroom List */
 .classroom-list-container {
-    background: #0f0f0f;
-    position: absolute;
-    bottom: 2px;
-    right: 0;
-    height: 80vh;
-    width: 75%;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.011);
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  
-    /* Scrollbar styling */
-    scrollbar-width: thin;
-    scrollbar-color: #00ff88 #0f0f0f; /* For Firefox */
-  }
-  
-  /* Webkit browsers (Chrome, Edge, Safari) */
-  .classroom-list-container::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .classroom-list-container::-webkit-scrollbar-track {
-    background: #0f0f0f;
-    border-radius: 12px;
-  }
-  
-  .classroom-list-container::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #00ff88, #006644);
-    border-radius: 12px;
-  }
-  
-  .classroom-list-container::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #00ff88, #004422);
-  }
-  
-  .classroom-list-container h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    font-weight: 700;
-    background: -webkit-linear-gradient(45deg, #4caf50, #2c6b2f);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-transform: uppercase;
-  }
-  
-  .classroom-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-    background-color: transparent;
-  }
-  
-  .classroom-table th, .classroom-table td {
-    padding: 14px 18px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: left;
-    font-size: 15px;
-  }
-  
-  .classroom-table th {
-    background-color: #292929;
-    color: #4caf50;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-  
-  .classroom-table tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    transition: background-color 0.3s ease;
-  }
-  
-  .view-btn, .delete-btn {
-    padding: 6px 14px;
-    margin: 0 5px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  .view-btn {
-    background: linear-gradient(45deg, #4caf50, #2c6b2f);
-    color: white;
-  }
-  
-  .view-btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #2c6b2f, #4caf50);
-  }
-  
-  .delete-btn {
-    background: linear-gradient(45deg, #ff5f6d, #ffc371);
-    color: white;
-  }
-  
-  .delete-btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(45deg, #ffc371, #ff5f6d);
-  }
-  
+  position: absolute;
+  bottom: 2px;
+  right: 0;
+  height: 80vh;
+  width: 75%;
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #3a0ca3;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  /* Scrollbar Styling */
+  scrollbar-width: thin;
+  scrollbar-color: #a371f7 #f3e8ff;
+}
+
+.classroom-list-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.classroom-list-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.classroom-list-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d6b3ff, #9d4edd);
+  border-radius: 12px;
+}
+
+.classroom-list-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f3d7ff, #7b2cbf);
+}
+
+.classroom-list-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #7b2cbf, #c77dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* Table */
+.classroom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #4a148c;
+}
+tr th {
+  background: #4e2e75;
+  color: white;
+}
+.classroom-table th, .classroom-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: left;
+  font-size: 15px;
+}
+
+.classroom-table th {
+  background-color: rgba(123, 44, 191, 0.1);
+  color: #7b2cbf;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.classroom-table tr:hover {
+  background-color: rgba(123, 44, 191, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+/* Buttons */
+.view-btn, .delete-btn {
+  padding: 7px 16px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(123, 44, 191, 0.3);
+}
+
+/* View Button - Soft Purple Glow */
+.view-btn {
+  background: linear-gradient(135deg, #c77dff, #7b2cbf);
+  color: white;
+  box-shadow: 0 0 12px #c77dff;
+}
+
+.view-btn:hover {
+  transform: scale(1.06);
+  background: linear-gradient(135deg, #7b2cbf, #c77dff);
+  box-shadow: 0 0 16px #9d4edd;
+}
+
+/* Delete Button - Premium Coral Gradient */
+.delete-btn {
+  background: linear-gradient(135deg, #ff7096, #ffa9c3);
+  color: white;
+  box-shadow: 0 0 12px #ff85a2;
+}
+
+.delete-btn:hover {
+  transform: scale(1.06);
+  background: linear-gradient(135deg, #ffa9c3, #ff7096);
+  box-shadow: 0 0 16px #ff6e95;
+}

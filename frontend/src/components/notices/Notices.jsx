@@ -12,7 +12,7 @@ const Notices = () => {
   useEffect(() => {
     const FetchNotices = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/auth/notices", { withCredentials: true });
+        const res = await axios.get("http://localhost:5000/api/notices/notices");
         console.log(res.data);
         if (res.data.success) {
           setNotices(res.data.notices);

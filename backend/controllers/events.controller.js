@@ -3,7 +3,7 @@ import EventModel from "../models/events.models.js";
 export const EventCreation = async (req, res) => {
     try {
         const { eventData } = req.body;
-        const { title, date, time, location, description, image, category, organizer , generateImage , generatedDescription  } = eventData;
+        const { title, date, time, location, description, image, category, organizer , generateImage , generatedDescription  , eventfor  } = eventData;
         if (!title || !date || !time || !location  || !category || !organizer) {
             return res.status(409).json({
                 success: false,
@@ -27,7 +27,8 @@ export const EventCreation = async (req, res) => {
             date,
             time,
             location,
-            imageUrl: image || generateImage
+            imageUrl: image || generateImage ,
+            eventfor : eventfor
         });
 
         return res.status(201).json({

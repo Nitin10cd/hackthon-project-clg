@@ -5,6 +5,7 @@ import ClassroomModel from "../models/classroom.models.js";
 import PostModel from "../models/posts.classsroom.models.js";
 import Question from "../models/options.models.js";
 import Test from "../models/mcq.models.js";
+import { sendStudentMarks } from "../Emails/mail.js";
 
 // check role for the google classroom
 export const checkRole = async (req, res) => {
@@ -362,6 +363,9 @@ export const startTestForStudent = async (req, res) => {
   }
 };
 
+// send in the email 
+
+
 export const submitTest = async (req, res) => {
   try {
     const { studentId, testId, answers } = req.body;
@@ -380,10 +384,9 @@ export const submitTest = async (req, res) => {
     const totalQuestions = test.questions.length;
     const marksPerQuestion = test.totalMarks / totalQuestions;
     for (const question of test.questions) {
-      const questionId = question._id.toString(); // assuming each question has a unique _id
+      const questionId = question._id.toString(); 
 
-      const selectedAnswer = answers[questionId]; // match by question ID
-
+      const selectedAnswer = answers[questionId];
       if (
         selectedAnswer &&
         selectedAnswer.trim().toLowerCase() === question.answer.trim().toLowerCase()
@@ -400,6 +403,8 @@ export const submitTest = async (req, res) => {
 
     await test.save();
 
+    const user = await StudentModel.findById(studentId);
+    sendStudentMarks(user.email,finalScore,test.name);
     return res.status(200).json({
       message: 'Test submitted successfully',
       correctAnswers,

@@ -25,7 +25,6 @@ export const NoticeCreation = async(req , res)=>{
         title : title ,
         description : description ,
         author : author ,
-        // attachments  : attachments ? attachments : [] ,
         targetAudience : targetAudience
        });
 

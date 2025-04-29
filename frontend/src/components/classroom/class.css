@@ -74,7 +74,6 @@ body {
 .room-student-container .room-container button {
     width: 120px;
     height: 40px;
-    background: linear-gradient(135deg, #4dd051, #055021);
     color: white;
     font-weight: bold;
     border: none;
@@ -217,62 +216,98 @@ body {
     font-size: 18px;
     text-align: center;
 }
+
 .room-student-container {
     display: flex;
     justify-content: space-between;
 }
+
 .student-joined-class {
     width: 400px;
 }
+
 .available-classes {
-    border-left: 0.5px solid green;
+    border-left: 0.5px solid rgb(66, 0, 128);
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-left: 10px;
-    overflow-y: scroll; 
-    width: 250px;
+    overflow-y: scroll;
+    width: 350px;
     height: 600px;
     scrollbar-width: none; /* Firefox */
+    padding: 10px;
     -ms-overflow-style: none; /* IE and Edge */
 }
-.available-classes .room-container {
-    width: 200px;
+.available-classes .room-container p {
+    margin-top: -10px;
 }
+
+.available-classes .room-container {
+    width: 300px;
+    height: 150px;
+}
+
 .available-classes::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
 }
 
 .available-classes .room-container {
-    background: linear-gradient(135deg, #4caf50, #28517c);
-    border-radius: 20px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    background:linear-gradient(to right, #8256b8 30%, #b286e7 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(170, 120, 255, 0.3);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: #ffffff;
 }
+
+.available-classes .room-container:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Text inside card */
 .available-classes .room-container p {
     margin: 0;
+    font-size: 1.1rem;
+    color: #c7c7c7;
 }
+
+/* Join Button */
 .available-classes .room-container button {
-    width: 120px;
-    height: 40px;
-    background: linear-gradient(135deg, #4dd051, #055021);
+    margin-top: 1rem;
+    width: 130px;
+    height: 42px;
+    background: #350d66;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1rem;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.available-classes .room-container button:hover {
+    background: #350d66;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.available-classes .room-container button:focus {
+    outline: 3px solid #66bb6a;
+    outline-offset: 2px;
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-    .room-container {
-        grid-template-columns: 1fr;
-        padding: 10px;
-    }
-    .room-box {
+    .available-classes .room-container {
+        padding: 1rem;
         width: 100%;
     }
 }

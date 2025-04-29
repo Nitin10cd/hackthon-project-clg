@@ -1,12 +1,12 @@
 /* Sidebar Container */
 .sidebar-container {
-  background-color: #101010; /* Dark background */
+  background-color: #f9f5ff; /* Light lavender background */
   width: 20%;
   min-height: 90vh;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #4caf50; /* Green border for consistency */
+  border-right: 1px solid #d1c4e9; /* Soft purple border */
   font-family: 'Segoe UI', sans-serif;
   position: relative;
   overflow-y: hidden;
@@ -20,13 +20,13 @@
   gap: 20px;
   font-size: 20px;
   cursor: pointer;
-  color: #f0eeee; /* Light text color */
+  color: #4a148c; /* Deep purple text */
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .features-tabs:hover {
-  background-color: #66bb6a; /* Dark background for hover */
-  color: white; /* Green text on hover */
+  background-color: #ede7f6; /* Light violet on hover */
+  color: #6a1b9a;
 }
 
 /* Group Tabs */
@@ -51,7 +51,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  color: #f0eeee; /* Light text color */
+  color: #4a148c;
   width: 100%;
   transition: background-color 0.2s ease, color 0.2s ease;
   padding: 5px;
@@ -59,9 +59,9 @@
 }
 
 .group-item:hover {
-  border-left: 10px solid #66bb6a; /* Green highlight on hover */
-  background-color: #163b76; /* Dark background for hover */
-  color: #66bb6a; /* Green text on hover */
+  border-left: 10px solid #9575cd; /* Purple accent */
+  background-color: #f3e5f5;
+  color: #6a1b9a;
 }
 
 /* Chat Actions (New Chat and Join Group Buttons) */
@@ -79,7 +79,7 @@
 
 /* Buttons Styling */
 .new-chat-btn, .join-group-btn {
-  background-color: #66bb6a; /* Green button background */
+  background-color: #9575cd; /* Medium purple */
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -92,13 +92,13 @@
 }
 
 .new-chat-btn:hover, .join-group-btn:hover {
-  background-color: #163b76; /* Darken on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #7e57c2; /* Darker purple */
+  transform: translateY(-2px);
 }
 
 .new-chat-btn:active, .join-group-btn:active {
-  background-color: #0d2e56; /* Even darker on active */
-  transform: translateY(1px); /* Slight push effect */
+  background-color: #5e35b1;
+  transform: translateY(1px);
 }
 
 /* Add Friends Container */
@@ -107,20 +107,20 @@
   top: 0px;
   width: 100%;
   padding: 5px;
-  background-color: #101010; /* Dark background */
+  background-color: #f9f5ff;
   height: 520px;
   overflow-y: scroll;
 }
 
 /* Add Friends Header */
 .add-friends-container-header {
-  color: white;
-  border-bottom: 2px solid white;
+  color: #4a148c;
+  border-bottom: 2px solid #9575cd;
 }
 
 /* Avatar Circle */
 .avatar-circle {
-  background-color: #66bb6a; /* Green color for avatar */
+  background-color: #9575cd;
   color: white;
   width: 36px;
   height: 36px;
@@ -140,4 +140,5 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #4a148c;
 }

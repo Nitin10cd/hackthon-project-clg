@@ -120,6 +120,7 @@
     font-size: 16px;
     cursor: pointer;
     position: relative;
+    color: #1d3557;
     transition: all 0.3s ease;
   }
   

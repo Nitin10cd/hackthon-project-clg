@@ -1,93 +1,114 @@
-/* Admin Dashboard */
+/* Admin Dashboard - Enhanced Whitish Purple Theme */
 .dashboard-page {
-  background: #0f0f0f;
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   right: 0;
   height: 84vh;
   width: 75%;
   padding: 2rem;
-  padding-top: 0px;
-  color: white;
+  padding-top: 0;
+  color: #ede5ff;
   font-family: 'Segoe UI', sans-serif;
   overflow-y: scroll;
   overflow-x: hidden;
-
-  /* Scrollbar styling */
   scrollbar-width: thin;
-  scrollbar-color: #00ff88 #0f0f0f; /* For Firefox */
+  scrollbar-color: #d5b3ff #1e1533;
 }
 
-/* Webkit-based browsers */
 .dashboard-page::-webkit-scrollbar {
   width: 8px;
 }
 
 .dashboard-page::-webkit-scrollbar-track {
-  background: #0f0f0f;
   border-radius: 10px;
 }
 
 .dashboard-page::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00ff88, #005533);
+  background: linear-gradient(180deg, #d5b3ff, #7f4cd3);
   border-radius: 10px;
 }
 
+/* Heading */
+.dashboard-heading {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #e2caff, #9b6ce1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+}
+
+/* Stats Cards Grid */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
   
-  .dashboard-heading {
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    background: -webkit-linear-gradient(45deg, #4caf50, #2c6b2f);
-    -webkit-background-clip: text;
-    color: transparent;
-  }
+}
+
+/* Individual Card */
+.card {
   
-  .stats-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
+  background: linear-gradient(to bottom right, #15101f, #1e1533);
+  padding: 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(155, 105, 235, 0.4);
+}
+
+/* Card Title */
+.card h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+  color: #dcbaff;
+  letter-spacing: 0.6px;
+}
+
+/* Card Value */
+.card p {
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin: 0;
+  color: #f7eeff;
+}
+
+/* Charts Section Grid */
+.charts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Chart Container */
+.chart-container {
   
-  .card {
-    background: #1e1e1e;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    height: 90px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .card h2 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #4caf50;
-  }
-  
-  .card p {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .charts-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
-  }
-  
-  .chart-container {
-    background: #1e1e1e;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
+  background: linear-gradient(to bottom right, #15101f, #1e1533);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(155, 105, 235, 0.35);
+}

@@ -10,6 +10,11 @@ import StudentList from "./StudentList"
 import TeacherComponent from "./TeacherComponent"
 import ClassroomList from "./ClassroomList";
 import AdminProfile from "./AdminProfile";
+import EventCreation from "../events/EventCreation";
+import NoticeCreation from "../notices/NoticeCreation";
+import EventsPage from "../events/EventPage";
+import Notices from "../notices/Notices";
+
 
 const AdminDashBoard = () => {
   const {id}=useParams();
@@ -54,6 +59,12 @@ const AdminDashBoard = () => {
       {
         tabClick==="Classrooms" && <ClassroomList />
       }
+      {
+        tabClick === "Create Events" && <EventCreation/>
+      }
+      {tabClick === "Create Notices" && <NoticeCreation />}
+      {tabClick === "Events" && <EventsPage/> }
+      {tabClick === "Notices" && <Notices />}
     </div>
   )
 }

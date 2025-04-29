@@ -22,14 +22,16 @@ import StudentList from './components/admin/StudentList';
 import TeacherComponent from './components/admin/TeacherComponent';
 import StartTest from './components/classroom/StartTest';
 import TestResults from './components/classroom/TestResults';
-
+import HomePage from './components/HomePage/HomePage';
+import './App.css'
 
 const App = () => {
   return (
 
       <Router>
           <Routes>
-            <Route path="/" element={<Home />} /> 
+            <Route path="/" element={<HomePage />} /> 
+            <Route path='/home' element = {<Home/>}/>
             <Route path="/register" element={<StudentRegister />} /> 
             <Route path='/login' element={<Login/>} />
             <Route path='/teacherRegister' element= {<TeacherRegister/>} />
@@ -47,7 +49,9 @@ const App = () => {
             <Route path='/teacher-list' element ={<TeacherComponent/>} />
             <Route path='/test/:testId' element = {<StartTest/> } />
             <Route path='/result/:testId' element = {<TestResults/>} />
-          </Routes>
+            <Route path='/homepage' element={<HomePage/>}/>
+            <Route path='/eventCreation' element = {<EventCreation/>} />
+           </Routes>
       </Router>
   );
 };

@@ -4,25 +4,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #101010;
+    background: #2a2a2a; /* Darker gray background for better contrast */
     padding: 2rem;
 }
 
 /* Form Layout */
 .student-register-form {
-    background: #1e1e1e;
+    background: #ffffff; /* White background for the form */
     padding: 2.5rem 3rem;
     border-radius: 12px;
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1); /* Soft shadow */
     width: 100%;
     max-width: 800px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); /* Glassmorphism effect */
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Heading Styling */
 .student-register-heading {
-    color: #66bb6a;
+    color: #6a1b9a; /* Purple color for heading */
     text-align: center;
     font-size: 2.4rem;
     font-weight: bold;
@@ -47,7 +47,7 @@
 .form-group label {
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
-    color: #c7c7c7;
+    color: #333333; /* Dark gray text for better readability */
     font-weight: 600;
     text-transform: capitalize;
 }
@@ -56,11 +56,11 @@
 .form-input,
 .form-select {
     padding: 1rem 1.5rem;
-    background: #2a2a2a;
-    border: 1px solid #4caf50;
+    background: #f5f5f5; /* Light gray input background */
+    border: 1px solid #6a1b9a; /* Purple border */
     border-radius: 8px;
     font-size: 1.1rem;
-    color: #ffffff;
+    color: #333333; /* Dark text */
     outline: none;
     transition: all 0.3s ease;
 }
@@ -68,13 +68,13 @@
 /* Focus & Hover Effects */
 .form-input:focus,
 .form-select:focus {
-    border-color: #66bb6a;
-    box-shadow: 0 0 10px rgba(102, 187, 106, 0.3);
+    border-color: #9c4dcc; /* Lighter purple on focus */
+    box-shadow: 0 0 10px rgba(156, 77, 204, 0.3); /* Soft glowing purple */
 }
 
 .form-input:hover,
 .form-select:hover {
-    background: #333333;
+    background: #e0e0e0; /* Slightly lighter gray on hover */
 }
 
 /* Submit Button */
@@ -86,27 +86,28 @@
 .submit-button {
     padding: 1rem 2.8rem;
     font-size: 1.2rem;
-    background-color: #4caf50;
+    background-color: #6a1b9a; /* Purple button */
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover and Active States for Submit Button */
 .submit-button:hover {
-    background-color: #388e3c;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    background-color: #9c4dcc; /* Lighter purple on hover */
+    transform: translateY(-4px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .submit-button:active {
-    transform: translateY(0);
+    transform: translateY(0); /* Button press effect */
 }
 
 .submit-button:focus {
-    outline: 3px solid #66bb6a;
+    outline: 3px solid #9c4dcc; /* Purple outline on focus */
     outline-offset: 3px;
 }
 

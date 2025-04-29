@@ -71,11 +71,7 @@ const EventDetailed = () => {
   return (
     <div className="event-page">
       <div className="event-card">
-        <img
-          src={event.image || "https://via.placeholder.com/600x300"}
-          alt="Event"
-          className="event-image"
-        />
+    
         <h2 className="event-title">{event.title}</h2>
         <p className="event-category">{event.category} Event</p>
 
