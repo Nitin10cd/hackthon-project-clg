@@ -17,6 +17,8 @@ import placementRoute from "./routes/placement.routes.js";
 import adminRoute from "./routes/admin.route.js";
 import Noticerouter from "./routes/notices.route.js";
 import EventRouter from "./routes/events.routes.js";
+import Blogrouter from "./routes/blogs.route.js";
+import { checkMessageForAbuse } from "./controllers/integratedAI.controller.js";
 
 const app = express();
 const server = http.createServer(app);
@@ -43,6 +45,7 @@ app.use("/api/placement",placementRoute);
 app.use("/api/admin", adminRoute);
 app.use("/api/notices",Noticerouter);
 app.use('/api/events',EventRouter);
+app.use('/api/blogs', Blogrouter);
 
 app.get('/api/jobs', async (req, res) => {
   try {
@@ -69,6 +72,8 @@ io.on("connection", (socket) => {
 
   socket.on("sendMessage", async (data) => {
     const { sender, receiver, content, messageType } = data;
+    console.log("Sender:", sender);
+    checkMessageForAbuse(content,sender);
     const message = new OneToOneMessage({ sender, receiver, content, messageType });
     await message.save();
     if (users[receiver]) {

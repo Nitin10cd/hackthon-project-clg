@@ -24,6 +24,7 @@ import StartTest from './components/classroom/StartTest';
 import TestResults from './components/classroom/TestResults';
 import HomePage from './components/HomePage/HomePage';
 import './App.css'
+import BlogsPage from './components/blogs/Blogs';
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
             <Route path='/result/:testId' element = {<TestResults/>} />
             <Route path='/homepage' element={<HomePage/>}/>
             <Route path='/eventCreation' element = {<EventCreation/>} />
+            <Route path='/blogs' element= {<BlogsPage/>} />
            </Routes>
       </Router>
   );

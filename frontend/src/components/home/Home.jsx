@@ -7,6 +7,8 @@ import './Home.css'
 import Classroomlist from '../classroom/Classroomlist';
 import PlacementCell from '../plcementCell/PlacementCell';
 import Notices from '../notices/Notices';
+import CreateBlog from '../blogs/createBlog';
+
 const Home = () => {
   const { user, tab, setUser, logout, setIsLoggedIn, isLoggedIn } = useApp();
   const [localUser, setLocalUser] = useState(null); 
@@ -74,6 +76,7 @@ const Home = () => {
           {(tab == "Classrooms") && <Classroomlist/>}
           { (tab == "Placement Cell" && <PlacementCell/>)}
           {(tab == "Announcements" && <Notices/>)}
+          {(tab =="Blog" && <CreateBlog/> )}
           </div>
           
         </div>

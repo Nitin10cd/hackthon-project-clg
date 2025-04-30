@@ -99,6 +99,7 @@ export const joinClass = async (req, res) => {
     }
 
     const user = await StudentModel.findOne({ email });
+    
     if (!user) {
       return res.status(404).json({ success: false, message: "Student not found." });
     }

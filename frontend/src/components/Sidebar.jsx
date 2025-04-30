@@ -3,7 +3,9 @@ import "./Sidebar.css";
 import {
   FaUser, FaFlag, FaChalkboardTeacher,
   FaBriefcase, FaComments, FaBookmark,
-  FaUsers, FaLayerGroup
+  FaUsers, FaLayerGroup,
+  FaBook,
+  FaRegCalendarAlt
 } from "react-icons/fa";
 import { useApp } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
@@ -35,12 +37,24 @@ const Sidebar = () => {
       <div className={`features-tabs ${tab === "General Chat" ? "active-tab" : ""}`} onClick={() => handleTabClick("General Chat")}>
         <FaComments /> General Chat
       </div>
-      <div className={`features-tabs ${tab === "Resources" ? "active-tab" : ""}`} onClick={() => handleTabClick("Announcements")}>
-        <FaBookmark /> Announcements / Notices
-      </div>
       <div className={`features-tabs ${tab === "Chat" ? "active-tab" : ""}`} onClick={() => handleTabClick("Chat")}>
         <FaUsers /> Chat
       </div>
+      <div className={`features-tabs ${tab === "Blog" ? "active-tab" : ""}`} onClick={() => handleTabClick("Blog")}>
+        <FaBook /> Create Blogs
+      </div>
+
+      <div className={`features-tabs ${tab === "Blog" ? "active-tab" : ""}`} onClick={() => navigate('/blogs')}>
+        <FaBook /> Show Blogs
+      </div>
+
+      <div className={`features-tabs ${tab === "Blog" ? "active-tab" : ""}`} onClick={() => navigate('/events')}>
+        <FaRegCalendarAlt/> Events
+      </div>
+      <div className={`features-tabs ${tab === "Blog" ? "active-tab" : ""}`} onClick={() => navigate('/notices')}>
+        <FaRegCalendarAlt/> Notices
+      </div>
+     
     </div>
   );
 };

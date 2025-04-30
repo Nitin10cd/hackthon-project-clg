@@ -1,9 +1,8 @@
-/* Test.css */
 
 .starttest-wrapper {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f0ff, #e3d8ff); /* Soft light purple gradient */
-  color: #4a148c; /* Deep purple text */
+  background: linear-gradient(135deg, #f5f0ff, #e3d8ff); 
+  color: #4a148c; 
   display: flex;
   flex-direction: column;
   align-items: center;

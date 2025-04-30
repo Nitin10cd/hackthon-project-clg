@@ -62,10 +62,6 @@ const TeacherClassroom = () => {
   return (
     <>
       <div className="classroom-container">
-        <div className="sidebar">
-          <h2 className="sidebar-title">My Classes</h2>
-          <JoinedClasses />
-        </div>
 
         <div className="main-content">
           <div className="class-header">

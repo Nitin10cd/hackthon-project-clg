@@ -1,11 +1,11 @@
 import express from 'express'
-import { BlogCreation, DeleteBlog, EditBlog, GetAllBlogs } from '../controllers/blog.controller.js';
+import {  createBlog, deleteblog, editBlog, getAllBlogs } from '../controllers/blog.controller.js';
 
 const Blogrouter = express.Router();
 
-Blogrouter.post('/createblog' , BlogCreation);
-Blogrouter.get('/allblogs' , GetAllBlogs);
-Blogrouter.post("/deleteblog" , DeleteBlog)
-Blogrouter.post("/editblog" , EditBlog);
+Blogrouter.post('/createblog' , createBlog);
+Blogrouter.get('/allblogs' , getAllBlogs);
+Blogrouter.post("/deleteblog" , deleteblog)
+Blogrouter.post("/editblog" , editBlog);
 
 export default Blogrouter ;

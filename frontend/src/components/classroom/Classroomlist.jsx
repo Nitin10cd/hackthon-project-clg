@@ -128,11 +128,6 @@ const Classroomlist = () => {
 
 
 
-
-  // const joinClassRoom = async () => {
-
-  // }
-
   return (
     <>
       {role === 'student' ? (

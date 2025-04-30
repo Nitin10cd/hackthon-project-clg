@@ -1,141 +1,90 @@
-import BlogModel from "../models/blog.model.js";
+import BlogModel from "../models/blog.models.js";
 
 
-
-export const BlogCreation = async (request, response) => {
+export const createBlog = async (req, res) => {
   try {
-    const { data, role } = request.body;
-    console.log(data);
-
+    const { data, role } = req.body;
     const { blogname, content, tags, image } = data;
 
     if (!blogname || !content || !tags) {
-      return response.status(400).json({
-        success: false,
-        message: "Please fill all required fields"
-      });
+      return res.status(400).json({ success: false, message: "Please fill all required fields." });
     }
 
-    if (role !== "Student") {
-      return response.status(403).json({
-        success: false,
-        message: "Access denied. Only students can create blogs."
-      });
+    
+    const existing = await BlogModel.findOne({ blogname });
+    if (existing) {
+      return res.status(409).json({ success: false, message: "A blog with this name already exists." });
     }
-    const exisitingBlog = await BlogModel.findOne({ blogname });
-    if (exisitingBlog) {
-      return response.status(405).json({
-        success: false,
-        message: "Blog already exists"
-      })
-    }
-    // Convert tags from string to array
+
     const tagsArray = tags.split(",").map(tag => tag.trim());
 
-    const newblog = await BlogModel.create({
+    const blog = await BlogModel.create({
       blogname,
       content,
+      image,
+      tags: tagsArray,
       likes: 0,
-      tags: tagsArray,   // Now it's an array
-      image
     });
 
-    return response.status(201).json({
-      success: true,
-      message: "New blog created successfully",
-      blog: newblog
-    });
-
-  } catch (error) {
-    return response.status(500).json({
-      success: false,
-      message: "Error while creating blog",
-      error: error.message
-    });
+    return res.status(201).json({ success: true, message: "Blog created successfully.", blog });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Server error", error: err.message });
   }
 };
 
-
-export const GetAllBlogs = async (req, res) => {
+// Get all blogs
+export const getAllBlogs = async (req, res) => {
   try {
-    const fetchblogs = await BlogModel.find();
-    return res.status(201).json({
-      success: true,
-      message: "Blogs Fetches successfully",
-      blogs: fetchblogs
-    })
+    const blogs = await BlogModel.find().sort({ createdAt: -1 });
+    return res.status(200).json({ success: true, blogs });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
   }
-  catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: error.message
-    })
-  }
-}
+};
 
-export const DeleteBlog = async (req, res) => {
-  try {
-    const { _id , userrole } = req.body;
-    if(userrole !== "Teacher"){
-       return res.status(404).json({
-        success : false ,
-        message : "You are not authorished"
-       })
-    };
-
-
-    const fetchblog = await BlogModel.findByIdAndDelete(_id);
-    return res.status(201).json({
-      success: true,
-      message: "Blog deleted Successfully",
-      blog : fetchblog
-    })
-  }
-  catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: error.message
-    })
-  }
-}
-
-export const EditBlog = async (req, res) => {
+// Edit a blog (Student)
+export const editBlog = async (req, res) => {
   try {
     const { _id, data } = req.body;
-    const { blogname, image, content, tags } = data;
-    if (!blogname || !image || !content || !tags) {
-      return res.status(404).json({
-        success: false,
-        message: "fill all credentials"
-      })
+    const { blogname, content, image, tags } = data;
+
+    if (!blogname || !content || !tags) {
+      return res.status(400).json({ success: false, message: "All fields are required." });
     }
 
-    const exisitingBlog = await BlogModel.findById(_id);
-    if (!exisitingBlog) {
-      return res.status(404).json({
-        success: false,
-        message: 'blog not found'
-      })
+    const updated = await BlogModel.findByIdAndUpdate(
+      _id,
+      {
+        blogname,
+        content,
+        image,
+        tags: tags.split(",").map(tag => tag.trim()),
+      },
+      { new: true }
+    );
+
+    if (!updated) return res.status(404).json({ success: false, message: "Blog not found." });
+
+    return res.status(200).json({ success: true, message: "Blog updated successfully.", blog: updated });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+// Delete blog (Only Teacher)
+export const deleteblog = async (req, res) => {
+  try {
+    const { _id, userrole } = req.body;
+
+    if (userrole !== "Teacher") {
+      return res.status(403).json({ success: false, message: "Only teachers can delete blogs." });
     }
 
-    const updateBlog = await BlogModel.findByIdAndUpdate({ _id }, {
-      blogname: blogname,
-      content: content,
-      tags: tags,
-      image: image
-    }, { new: true });
+    const deleted = await BlogModel.findByIdAndDelete(_id);
+    if (!deleted) return res.status(404).json({ success: false, message: "Blog not found." });
 
-    return res.status(201).json({
-      success : true ,
-      message : "data updated successfully"
-    })
+    return res.status(200).json({ success: true, message: "Blog deleted successfully." });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
   }
-
-
-  catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: error.message
-    })
-  }
-}
+};

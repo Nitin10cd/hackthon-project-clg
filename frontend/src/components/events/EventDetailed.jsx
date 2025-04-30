@@ -40,10 +40,8 @@ const EventDetailed = () => {
       toast.success("Your vote has been recorded!");
     } catch (error) {
       console.error("Poll submission failed:", error.message);
-      toast.error("Your Poll Already Recorded");
     }
   } else {
-    toast.error("Your role must be Student to vote.");
   }
 
     }

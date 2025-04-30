@@ -13,9 +13,11 @@ import {
 } from "react-icons/fa";
 
 import { useApp } from "../../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const AdminSide = () => {
   const { admin, tabClick, setTabClick } = useApp();
+  const navigate = useNavigate();
 
   const handleTabClick = (label) => {
     setTabClick(label);
@@ -47,10 +49,10 @@ const AdminSide = () => {
       <div className={`features-tabs ${tabClick === "Create Notices" ? "active-tab" : ""}`} onClick={() => handleTabClick("Create Notices")}>
         <FaBullhorn /> Create Notices
       </div>
-      <div className={`features-tabs ${tabClick === "Events" ? "active-tab" : ""}`} onClick={() => handleTabClick("Events")}>
+      <div className={`features-tabs ${tabClick === "Events" ? "active-tab" : ""}`} onClick={() => navigate('/events')}>
         <FaRegCalendarAlt /> Events
       </div>
-      <div className={`features-tabs ${tabClick === "Notices" ? "active-tab" : ""}`} onClick={() => handleTabClick("Notices")}>
+      <div className={`features-tabs ${tabClick === "Notices" ? "active-tab" : ""}`} onClick={() => navigate('/notices')}>
         <FaStickyNote /> Notices
       </div>
     </div>

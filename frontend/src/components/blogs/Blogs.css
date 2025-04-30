@@ -13,13 +13,14 @@
   
   .blogs-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
   }
   
   .blog-card {
     background: #fff;
-    max-height: 50vh;
+    height: 600px;
+    width: 400px;
     border-radius: 16px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
     overflow-y: scroll;
